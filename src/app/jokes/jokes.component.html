@@ -1,0 +1,21 @@
+<table mat-table class="text-list" [dataSource]="dataSource">
+       <!-- Position Column -->
+       <ng-container matColumnDef="ID">
+        <mat-header-cell class="id-cell" *matHeaderCellDef> ID </mat-header-cell>
+        <mat-cell class="id-cell" *matCellDef="let element"> {{element.id}} </mat-cell>
+      </ng-container>
+      <ng-container matColumnDef="Joke">
+        <mat-header-cell *matHeaderCellDef> Joke </mat-header-cell>
+        <mat-cell *matCellDef="let element">
+            <div *ngIf="element.type == 'single'">
+                {{element.joke}} 
+            </div>
+            <div *ngIf="element.type == 'twopart'">
+                {{element.setup}} 
+                {{element.delivery}} 
+            </div>
+            </mat-cell>
+      </ng-container>
+      <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+      <mat-row (click)="openDialog(row)" *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</table>

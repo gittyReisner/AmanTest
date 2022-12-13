@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    justify-content: center;
+    margin-top: 100px;
+}
+
+.login-form{
+    font-family: Open Sans, sans-serif !important;
+    text-align: center;
+}
+    
+::ng-deep .mat-form-field-wrapper {
+    line-height: normal;
+    padding-bottom: unset !important;
+    margin-bottom: unset !important;
+}
+
+.form-field {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.name-field {
+    margin-bottom: 40px;
+}
+
+.text-field {
+    width: 480px;
+}
+
+.error-mode {
+    font-size: 12px;
+    color: #df0303;
+    margin-top: 5px;
+    text-align: left;
+}
+
+.login-btn{
+    width: 220px;
+    height: 30px;
+    background: #399bda;
+    background-color: #399bda;
+    color: #ffffff;
+    font-size: 14px;
+    font-family: Open Sans, sans-serif;
+    font-weight: 700;
+    border: none;
+    cursor: pointer !important;
+}

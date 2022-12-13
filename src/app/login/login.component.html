@@ -1,0 +1,38 @@
+<div class="container">
+<div [formGroup]="loginForm" class="login-form" id="login-form">
+    <div class="form-field name-field">
+        <mat-form-field appearance="outline" class="text-field">
+            <mat-label>Email</mat-label>
+            <input [formControl]="emailControl" matInput placeholder="Email">
+        </mat-form-field>
+        <mat-error *ngIf="emailControl.value && emailControl.hasError('email')"
+            class="error error-mode">
+            Email address not well formed
+        </mat-error>
+        <mat-error *ngIf="isValidMode && !emailControl.value" class="error error-mode">
+            This field is required
+        </mat-error>
+    </div>
+<div class="form-field name-field">
+    <mat-form-field appearance="outline" class="text-field">
+        <mat-label>Password</mat-label>
+        <input [formControl]="passwordControl" matInput placeholder="Password">
+    </mat-form-field>
+    <mat-error *ngIf="passwordControl.value && passwordControl.hasError('maxlength')"
+        class="error error-mode">
+        Maximum of 15 characters
+    </mat-error>
+    <mat-error *ngIf="passwordControl.value && passwordControl.hasError('pattern')"
+        class="error error-mode">
+        Invalid characters
+    </mat-error>
+    <mat-error *ngIf="isValidMode && !passwordControl.value" class="error error-mode">
+        This field is required
+    </mat-error>
+</div>
+    <button type="submit" class="login-btn" (click)="onSubmit()">Login</button>
+    <mat-error *ngIf="wrongIdentification" class="error error-mode">
+        Email and Password are incorrect
+    </mat-error>
+</div>
+</div>

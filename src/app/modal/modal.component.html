@@ -1,0 +1,49 @@
+<div class="modal">
+    <div mat-dialog-actions>
+        <button mat-button class="close" (click)="onNoClick()"></button>
+      </div>
+    <div mat-dialog-content>
+<table class="table">
+  <thead>
+    <tr>
+<div *ngIf="data.type == 'twopart'">
+    <th scope="col">Setup</th>
+    <th scope="col">Delivery</th>
+</div>
+<div  *ngIf="data.type == 'single'"> 
+    <th scope="col">Joke</th>
+</div>
+      <th scope="col">Category</th>
+      <th scope="col">Racist</th>
+      <th scope="col">Sexist</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+        <div *ngIf="data.type == 'twopart'">
+            <td scope="col">{{myJoke.setup}}</td>
+            <td scope="col">{{myJoke.delivery}}</td>
+        </div>
+        <div  *ngIf="data.type == 'single'"> 
+            <td scope="col">{{myJoke.joke}}</td>
+        </div>
+      <td>{{myJoke.category}}</td>
+      <td>{{myJoke.flags.racist}}</td>
+      <td>{{myJoke.flags.sexist}}</td>
+    </tr>
+    <tr *ngFor="let joke of jokesByType">
+        <div *ngIf="joke.type == 'twopart'">
+            <td scope="col">{{joke.setup}}</td>
+            <td scope="col">{{joke.delivery}}</td>
+        </div>
+        <div  *ngIf="joke.type == 'single'"> 
+            <td scope="col">{{joke.joke}}</td>
+        </div>
+      <td>{{joke.category}}</td>
+      <td>{{joke.flags.racist}}</td>
+      <td>{{joke.flags.sexist}}</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+</div>
